@@ -1,0 +1,57 @@
+{
+  "name": "vite-best-setup",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --fix --ext ts,tsx",
+    "format": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "format:fix": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "cy:open-e2e": "cypress open --e2e --browser chrome",
+    "cy:open-unit": "cypress open --component --browser chrome",
+    "cy:run-unit": "cypress run --component ",
+    "cy:run-e2e": "cypress run --e2e",
+    "cy:e2e": "start-server-and-test dev http-get://localhost:3000 cy:open-e2e",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "click-to-react-component": "^1.0.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.3.3"
+  },
+  "devDependencies": {
+    "@csstools/postcss-nesting-experimental": "^2.0.0",
+    "@cypress/code-coverage": "^3.11.0",
+    "@cypress/react18": "^2.0.0",
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "cypress": "^12.17.3",
+    "eslint": "^8.46.0",
+    "eslint-plugin-react": "^7.33.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "postcss": "^8.4.27",
+    "postcss-cli": "^10.1.0",
+    "prettier": "^3.0.1",
+    "start-server-and-test": "^2.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-istanbul": "^5.0.0"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  }
+}
